@@ -52,6 +52,9 @@ baseline-most-popular-by-attribute:
 metrics:
 	item_recommendation --training-file=data/ml-100k/u1.base --test-file=data/ml-100k/u1.test --measures="prec@5,NDCG"
 
+hyperparameter-wrmf:
+	item_recommendation --training-file=data/ml-100k/u.data --recommender=WRMF --recommender-options="reg=0.01 alpha=2" --test-ratio=0.2
+	
 hyperparameter-search:
 	rating_prediction --training-file=data/ml-1m/ratings.txt --search-hp --test-ratio=0.2
 
